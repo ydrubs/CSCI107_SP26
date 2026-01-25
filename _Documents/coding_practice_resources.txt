@@ -1,0 +1,13 @@
+1) Structured self-paced courses covering multiple languages and skill levels.
+   Free with the option to get certifications:
+   https://edube.org/
+
+ 2) Great all-around practice for a variety of langauges
+    About 10-15 free challenges then pay
+    https://edabit.com/
+
+3) Python-specific practices, some are challenging but focus on fundemental skills
+   A few free options with pid 'byte' packs
+   https://pybitesplatform.com/
+
+
