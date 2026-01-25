@@ -1,3 +1,7 @@
+"""
+SP26
+Example algorithms from class
+"""
 # n = 676773687365874356
 # sum = 0
 #
