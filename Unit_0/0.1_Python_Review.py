@@ -52,7 +52,7 @@ print(type(x), type(name), type(status)) # Python is strongly-typed
     - Assignment: =, +=, -=, *=, etc.
 """
 
-# Arithmetic
+# -- Arithmetic
 # a = 10 + 5 # addition
 # b = 10 % 4 # modulus (remainder)
 # c = 4 ** 2# Exponents
@@ -70,15 +70,30 @@ print(type(x), type(name), type(status)) # Python is strongly-typed
 # print(a == 15)     # True
 # print(a != 14)     # True
 
-# Interesting thing not to dwell on
-# n1 = 5
-# some_number = 5
-# print(n1 == some_number) # True
-# print(n1 is some_number) # True
-# print(id(n1), id(some_number))
+
+"""
+Python handles storing data in memory differently depending on the value of the data
+"""
+# -- Python creates the same data piece for both so it places it in the same location in memory
+# a = 1
+# b = 1
+
+# -- Python does a different set of operation so it treats them as two district pieces of data
+# c = 5000
+# d = int(str(5000))
+#
+# print(a is b) # TRUE
+# print(c is d) # FALSE
+
+# -- Lists are always distict pieces of data
+# l1 = [1,2,3]
+# l2 = [1,2,3]
+
+# print(l1 is l2) # FALSE
 
 
-# Logical
+
+# -- Logical
 # temperature = 25
 # print(temperature > 20 and temperature < 30)  # True
 # print(temperature > 20 and not temperature > 30) # True
