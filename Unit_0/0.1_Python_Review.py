@@ -10,7 +10,7 @@
 Docstring comments appear in a different shade when they are not part of the first line
 """
 # A single-line comment example
-pass  # This is an inline comment
+a = 1  # This is an inline comment
 
 
 
@@ -21,12 +21,12 @@ pass  # This is an inline comment
     - Use int(), float(), or str() to convert input types
     - Use f-strings for clean output formatting
 """
-
-pass
-pass
-
-pass # Results in an error because all inputs are strings by default (age)
-
+# name = input("Enter your name: ")
+# age = input("Enter your age: ")
+#
+# print(f"Hello {name}, you are {age} years old.")
+# print("In 5 years you will be" , int(age) + 5)
+# print("In 5 years you will be " + str(int(age) + 5) + " years old")
 
 
 #------Concept 3: Variable Assignment -------
@@ -37,12 +37,11 @@ pass # Results in an error because all inputs are strings by default (age)
     - Python variables can change type, but use consistently
 """
 
-pass
-pass  # x is now 7
-pass
-pass
-
-pass
+x = 5
+x = x + 2  # x is now 7
+name = 'Bob'
+status = True
+print(type(x), type(name), type(status)) # Python is strongly-typed
 
 
 #------Concept 4: Operators -------
@@ -54,19 +53,35 @@ pass
 """
 
 # Arithmetic
-pass # addition
-pass # modulus (remainder)
-pass # Exponents
+# a = 10 + 5 # addition
+# b = 10 % 4 # modulus (remainder)
+# c = 4 ** 2# Exponents
+# print(c)
+# number = 9
+# other_number = 10
+# print(number/other_number) # / Always results in a float
+# print(number//other_number) # Always gives an integer ROUNDED DOWN
+
+#
+# d = 100 ** 0.5
+# print(d)
 
 # # Comparison
-pass     # True
-pass     # True
+# print(a == 15)     # True
+# print(a != 14)     # True
+
+# Interesting thing not to dwell on
+# n1 = 5
+# some_number = 5
+# print(n1 == some_number) # True
+# print(n1 is some_number) # True
+# print(id(n1), id(some_number))
+
 
 # Logical
-temperature = 25
-pass  # True
-pass # True
-
+# temperature = 25
+# print(temperature > 20 and temperature < 30)  # True
+# print(temperature > 20 and not temperature > 30) # True
 
 
 
@@ -77,10 +92,10 @@ pass # True
     - Use type() to check a variable’s type
 """
 
-# a = 42          # int
-# b = 3.14        # float
-# c = "robot"     # str
-# d = True        # bool
+a = 42          # int
+b = 3.14        # float
+c = "robot"     # str
+d = True        # bool
 
 """
     A MUTABLE data type means that an element in the data type can be 
@@ -93,10 +108,17 @@ pass # True
         Example: In the string "Hello", we cannot change the 
                   'H' to a 'Y' without rewriting the string completely 
 """
-# List (mutable)
+senors = [100, 200, 300]# List (mutable)
+print(senors[1]) # Shows 200
 
+senors[0] = 120 # Changes 100 to 120
+print(senors)
 
+senors.append(400) # add 400 to the end of the list
+print(senors)
 
+senors.insert(0, 'a_number')
+print(senors)
 
 # Tuple (immutable)
 

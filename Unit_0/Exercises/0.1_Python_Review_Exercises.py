@@ -34,8 +34,3 @@ Exercises:
 
 #6. Write a function that takes two numbers as floats, adds them together, and returns the result. Then call the function.
 
-
-
-
-#7. Go to https://edabit.com/ sign up for an account and try one of the Python challenges.
-#   You choose the difficulty level and challenge you want to try. Explain (or copy/paste) the challenge here along with your solution code.
