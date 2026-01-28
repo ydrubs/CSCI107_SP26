@@ -123,22 +123,40 @@ d = True        # bool
         Example: In the string "Hello", we cannot change the 
                   'H' to a 'Y' without rewriting the string completely 
 """
-senors = [100, 200, 300]# List (mutable)
-print(senors[1]) # Shows 200
+# senors = [100, 200, 300]# List (mutable)
+# print(senors[1]) # Shows 200
+#
+# senors[0] = 120 # Changes 100 to 120
+# print(senors)
+#
+# senors.append(400) # add 400 to the end of the list
+# print(senors)
+#
+# senors.insert(0, 'a_number')
+# print(senors)
+#
+#
+# senors.pop()
+# print(senors)
+#
+# senors.pop(1)
+# print(senors)
 
-senors[0] = 120 # Changes 100 to 120
-print(senors)
 
-senors.append(400) # add 400 to the end of the list
-print(senors)
-
-senors.insert(0, 'a_number')
-print(senors)
 
 # Tuple (immutable)
+# position = (5, 10, 15)
+# print(position[1]) # Tuples are iterable
+#
+# for thing in position:
+#     print(thing)
 
+# position[0] = 6 # Can't overide individual elements
 
-
+# print(dir(position))
+# print(help(int))
+#
+#
 
 
 #------Concept 6: Conditionals -------
@@ -147,13 +165,13 @@ print(senors)
     - Conditions must evaluate to True or False
     - Use and, or, not to combine conditions
 """
-
-temp = 22
-
-
-
-
-
+# temp = 22
+# if temp > 30:
+#     print("it's hot")
+# elif temp >= 20:
+#     print("Its warm")
+# else:
+#     print("System ready")
 
 #------Concept 7: Loops -------
 """
@@ -161,17 +179,43 @@ temp = 22
     - Use while loops to repeat while a condition is true
     - Use break to exit, continue to skip one iteration
 """
+colors = ['green', 'red', 'black', 'dark_red']
 
-# for loop with range
+# for loop with range (looping by positon of element)
+# for i in range(5): #Range is exclusive
+#     print(i)
+#
+# for i in range(2, 10):
+#     print(i)
 
+# for i in range(2,100,2):
+#     print(i)
+
+# for i in range(len(colors)):
+#     print(-i, colors[-i])
 
 
 # for loop over list
-
-
+# for color in colors:
+#     print(color)
+#     if color == 'red':
+#         print("I like red too!")
+#         break
+#         # continue
 
 
 # while loop
+# x = 0
+# while x <= 11:
+#     print(f"x is {x}")
+#     x +=1
+#
+# y = 0
+# while True:
+#     print(f"y is {y}")
+#     y +=1
+#     if y == 11:
+#         break
 
 
 
@@ -184,12 +228,32 @@ temp = 22
     - Use return to send back a result
 """
 # #No parameters passed
+# def greet():
+#     print("Hello")
+# greet()
 
-
+# def greet():
+#     return "hello"
+#
+# greeting = greet()
+# print(greeting) # prints hello
+#
+# print(greet()) # also prints hello
 
 # #One (or more parameters passed)
+# def greet(name : str):
+#     return f"hello {name}"
 
+# user_name = input("Enter your name: ")
+# greeting = greet("Jon")
+# print(greeting)
 
+def greet(name : str, age : int) -> int:
+    n = age + 10
+    return n
+
+greeting = greet('Jon', 20)
+print(greeting)
 
 
 #Using keyword parameters
