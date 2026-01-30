@@ -69,11 +69,17 @@ pass
 
 """
 Whole-class example - 
-    “Digital Root” Repeater - given an integer, keep summing the digits until one inter reamins 
+    “Digital Root” Repeater - given an integer, keep summing the digits until one integer remains 
             Example - 99 -> 18 -> 9 (outpus 9)
             
                 Input: a whole number (ex: 472)
                 Output: keep summing digits until one digit remains (ex: 4)
+                
+        Process:
+            1) recast int, n, into a string
+            2) recast that string into a list of character
+            3) Convert each character back into an int
+            4) take the sum of each element from the list
 """
 
 ###########################################################
