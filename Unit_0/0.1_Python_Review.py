@@ -248,26 +248,35 @@ colors = ['green', 'red', 'black', 'dark_red']
 # greeting = greet("Jon")
 # print(greeting)
 
-def greet(name : str, age : int) -> int:
-    n = age + 10
-    return n
+# def greet(name : str, age : int) -> int:
+#     n = age + 10
+#     return n
+#
+# greeting = greet('Jon', 20)
+# print(greeting)
 
-greeting = greet('Jon', 20)
+
+# Using keyword parameters
+def greet(name : str = 'Jon', age : int = 20) -> tuple:
+    return f"Hello {name} you are {age} years old"
+    # return (name, age)
+
+greeting = greet('Bill', 45)
 print(greeting)
 
+another_greeting = greet(age = 50)
+print(another_greeting)
 
-#Using keyword parameters
+# Positional parameters NEED to be used first if there both keyword and postional
+def greet(location: tuple, name : str = 'Jon', age : int = 20):
+    profile = [name, age, location]
+    return  profile
 
-
-
-
-#Using a return
-
-
-
-
-# # Using type hints to indicate what data type Python should expect
-
+coordinates = (3.456245, 45.387338)
+a_profile = greet(coordinates)
+print(a_profile)
+print(f"You are located at the x-coordinate of {a_profile[2][0]}"
+      f"and the y-coordinate of {a_profile[2][1]}")
 
 
 
@@ -280,19 +289,46 @@ print(greeting)
 """
 
 # # Import full module with all built-in function
-pass
-pass # call the function from the module using dot-notation
-
-
+import math
+result = math.sqrt(2) # call the function from the module using dot-notation
+print(result)
 
 # Import specific function only
+from math import sqrt, pi
 
-
-
+result2 = sqrt(2)
+print(pi)
 
 # # Import with alias, useful with modules that have long or awkward names
+from math import sqrt as i_love_math
+print(i_love_math(4))
 
-
+import random as i_have_no_idea_what_is_going_on
+n = i_have_no_idea_what_is_going_on.randint(0,100)
+print(n)
 
 
 # Import multiple functions from a module
+from math import *
+result3 = sqrt(25)
+print(result3)
+
+# --- in - class practice ---
+# --- return the first occurence of a letter in a word
+word = 'PProgramming'
+word = list(word)
+word_copy = list(word)
+
+occurences = 0
+for letter in word:
+    if letter in word_copy:
+        occurences +=1
+        if occurences > 1:
+            print(letter)
+            break
+
+word2 = "programming"
+for letter in word2:
+    if word2.count(letter) > 1:
+        print(letter)
+        break
