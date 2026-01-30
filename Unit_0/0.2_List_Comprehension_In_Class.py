@@ -1,4 +1,4 @@
-"""0.1b - List Comprehension
+"""0.1 - List Comprehension
 
 List comprehension in Python is a concise way to create lists from existing ones.
 It's a powerful tool to write cleaner, more readable code
@@ -63,6 +63,21 @@ pass
 
 """...using list comprehension to do the same"""
 pass
+
+
+###########################################################
+
+"""
+Whole-class example - 
+    “Digital Root” Repeater - given an integer, keep summing the digits until one inter reamins 
+            Example - 99 -> 18 -> 9 (outpus 9)
+            
+                Input: a whole number (ex: 472)
+                Output: keep summing digits until one digit remains (ex: 4)
+"""
+
+###########################################################
+
 
 """
     Try it:
