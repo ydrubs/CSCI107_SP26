@@ -17,7 +17,8 @@ Part 1: Given the following list:
         where each tuple contains: (original_number, transformed_number)
 
         Should return: [(10, 3.33), (21, 7.0), (18, 6.0), (9, 3.0)]
-        HINT: (l1[i], l2[i]) will be the output expression that goes into the list comprehension
+            HINT: The list comprehension loops over a range and replace each range value with a tuple representing the
+                  element at the index of that range such as (<list_name1>[i], <list_name2>[i])
 """
 # SOLUTION HERE
 
