@@ -7,32 +7,47 @@ It's a powerful tool to write cleaner, more readable code
 
 ###########################################################
 """Create a list of values from 0 to 99 using a for loop"""
-pass
+# numbers = []
+# for i in range(100):
+#     numbers.append(i)
+#
+# print(numbers)
 
 
 """Use list comprehension to achieve the same thing"""
-pass
-
+# numbers = [i for i in range(100)]
+# print(numbers)
 
 ###########################################################
 """Filtering - Create a list of only even numbers between 0 and 99 using a for loop"""
-pass
+# evens = []
+#
+# for i in range(100):
+#     if i % 2 == 0:
+#         evens.append(i)
+# print(evens)
 
 
 
 """Filtering - Create a list of only even numbers between 0 and 99 using list comprehension"""
-pass
+# evens = [i for i in range(100) if i % 2 == 0]
+# print(evens)
 
 
 
 ###########################################################
 """Mapping - Create a list that doubles every number between 0 and 99 using a for loop"""
-pass
+double = []
+for i in range(100):
+    i *= 2
+    double.append(i)
+print(double)
 
 
 
 """Mapping - Create a list that doubles every number between 0 and 99 using list comprehension"""
-pass
+double = [i*2 for i in range(100)]
+print(double)
 
 
 
@@ -40,30 +55,45 @@ pass
 ###########################################################
 """Combining mapping and filtering with a loop.
 Triple all the even numbers between 1 and 100"""
-pass
+triple = []
+for i in range(100):
+    i *= 3
+    if i % 2 == 0:
+        triple.append(i)
 
+print(triple)
 
 
 """Combining mapping and filtering with list comprehension
-Triple all the even numbers between 1 and 100"""
-pass
+Triple all the even numbers between 1 and 100 and only put them in if they are even"""
+triple = [i*3 for i in range(100) if i % 2 == 0]
+print(triple)
 
 
 ###########################################################
 
 """Using list comprehension to filter common elements of two lists
 First we'll make two lists - multiples of 3 and 5 up tp 100 using list comprehension"""
-pass
-
+threes = [i for i in range(100) if i % 3 == 0]
+fives = [i for i in range(100) if i % 5 == 0]
+print(threes)
+print(fives)
 
 """Now we use a for loop to filter the common elements in both lists and write to a new list"""
-pass
-
+common_multiples = []
+for number in threes:
+    if number in fives:
+        common_multiples.append(number)
+print(common_multiples)
 
 
 """...using list comprehension to do the same"""
-pass
+common_multiples = [i for i in threes if i in fives]
+print(common_multiples)
 
+colbys_numbers = [15, 75, 67]
+common_multiples2 = [i for i in threes if i in fives and i in colbys_numbers]
+print(common_multiples2)
 
 ###########################################################
 
@@ -83,6 +113,10 @@ Whole-class example -
 """
 
 ###########################################################
+n = 67
+
+n_sum = sum([int(i) for i in str(n)])
+print(n_sum)
 
 
 """
