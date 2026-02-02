@@ -21,6 +21,7 @@ Part 1: Given the following list:
 """
 # SOLUTION HERE
 
+
 """
 Part 2 (DIFFICULT/ OPTIONAL): Movie data analyzer -
     Given a list of tuples called 'movies' and another list of tuples called 'box office' shown below:
