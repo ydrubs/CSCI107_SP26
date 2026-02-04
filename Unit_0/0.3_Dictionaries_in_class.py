@@ -1,12 +1,12 @@
 ##Slide 2
-people = {'Jon': 'Lawyer', 'Susan': 'Programmer', 'Robert': 'Bank Manager', 'Tanya': 'Engineer'}
+# people = {'Jon': 'Lawyer', 'Susan': 'Programmer', 'Robert': 'Bank Manager', 'Tanya': 'Engineer'}
 # print(people[0]) # Can't access dictionary values by index
 
-people['Bob'] = 'Builder'
-print(people)
-
-people['Jon'] = 'Teacher'
-print(people)
+# people['Bob'] = 'Builder'
+# print(people)
+#
+# people['Jon'] = 'Teacher'
+# print(people)
 
 ##SLide 3
 # pass #This will give an error because dictionaries are not ordered (can't access by index)
@@ -16,11 +16,11 @@ print(people)
 # print(people)
 
 ##Slide 4
-fords = {'Ford': 'Mustang', 'Ford': 'Fusion', 'Ford': 'F150', }
-print(fords)
-
-fords = {'Ford':['Mustang', 'Fusion'], 'Chevy':['Silvarado', 'Camaro']}
-print(fords)
+# fords = {'Ford': 'Mustang', 'Ford': 'Fusion', 'Ford': 'F150', }
+# print(fords)
+#
+# fords = {'Ford':['Mustang', 'Fusion'], 'Chevy':['Silvarado', 'Camaro']}
+# print(fords)
 
 ##Slide 5
 import faker
@@ -34,11 +34,11 @@ Example profile
 """
 
 ##Slide 6
-# print(pass) ##Access the value corresponding to a key
-# print(pass) #Gives an error because age is not a key in the dictionary
+print(profile['name']) ##Access the value corresponding to a key
+# print(profile['Name']) #Gives an error because age is not a key in the dictionary
 
-# print(pass)
-# print(pass)
+print(profile.get('Name')) # Returns None because 'Name' is not a valid key
+print(profile.get('name'))
 
 
 ##Slide 7

@@ -37,31 +37,31 @@ It's a powerful tool to write cleaner, more readable code
 
 ###########################################################
 """Mapping - Create a list that doubles every number between 0 and 99 using a for loop"""
-double = []
-for i in range(100):
-    i *= 2
-    double.append(i)
-print(double)
+# double = []
+# for i in range(100):
+#     i *= 2
+#     double.append(i)
+# print(double)
 
 
 
 """Mapping - Create a list that doubles every number between 0 and 99 using list comprehension"""
-double = [i*2 for i in range(100)]
-print(double)
-
+# double = [i*2 for i in range(100)]
+# print(double)
+#
 
 
 
 ###########################################################
 """Combining mapping and filtering with a loop.
 Triple all the even numbers between 1 and 100"""
-triple = []
-for i in range(100):
-    i *= 3
-    if i % 2 == 0:
-        triple.append(i)
-
-print(triple)
+# triple = []
+# for i in range(100):
+#     i *= 3
+#     if i % 2 == 0:
+#         triple.append(i)
+#
+# print(triple)
 
 
 """Combining mapping and filtering with list comprehension
@@ -74,26 +74,26 @@ print(triple)
 
 """Using list comprehension to filter common elements of two lists
 First we'll make two lists - multiples of 3 and 5 up tp 100 using list comprehension"""
-threes = [i for i in range(100) if i % 3 == 0]
-fives = [i for i in range(100) if i % 5 == 0]
-print(threes)
-print(fives)
+# threes = [i for i in range(100) if i % 3 == 0]
+# fives = [i for i in range(100) if i % 5 == 0]
+# print(threes)
+# print(fives)
 
 """Now we use a for loop to filter the common elements in both lists and write to a new list"""
-common_multiples = []
-for number in threes:
-    if number in fives:
-        common_multiples.append(number)
-print(common_multiples)
+# common_multiples = []
+# for number in threes:
+#     if number in fives:
+#         common_multiples.append(number)
+# print(common_multiples)
 
 
 """...using list comprehension to do the same"""
-common_multiples = [i for i in threes if i in fives]
-print(common_multiples)
-
-colbys_numbers = [15, 75, 67]
-common_multiples2 = [i for i in threes if i in fives and i in colbys_numbers]
-print(common_multiples2)
+# common_multiples = [i for i in threes if i in fives]
+# print(common_multiples)
+#
+# colbys_numbers = [15, 75, 67]
+# common_multiples2 = [i for i in threes if i in fives and i in colbys_numbers]
+# print(common_multiples2)
 
 ###########################################################
 
@@ -113,10 +113,10 @@ Whole-class example -
 """
 
 ###########################################################
-n = 67
-
-n_sum = sum([int(i) for i in str(n)])
-print(n_sum)
+# n = 67
+#
+# n_sum = sum([int(i) for i in str(n)])
+# print(n_sum)
 
 
 """
@@ -128,9 +128,21 @@ print(n_sum)
                 Returns: ['a', 'b', 'c']
 
     Extension: Only print the letter if the last letter and first letter are the same
-                Returns: [""ambarella"]
+                Returns: ["a"]
 
 """
+# words = ["apple", "banana", "cherry", "ambarella"]
+# fl = []
+# for element in words:
+#     # print(element[0])
+#     fl.append(element[0])
+# print(fl)
+#
+# fl = [i[0] for i in words]
+# print(fl)
+#
+# fl_ll = [i for i in words if i[0] == i[-1]]
+# print(fl_ll)
 
 ###########################################################
 """
@@ -138,3 +150,11 @@ Use list comprehension to create a list of 5 tuples where the first element n ea
 and the second element is it square number - for example:
     [(1,1), (2,4), (3,9)....]
 """
+t_list = []
+for i in range(1,6):
+    t = (i, i**2)
+    t_list.append(t)
+print(t_list)
+
+t_list = [(i, i**2) for i in range(1,600)]
+print(t_list)
