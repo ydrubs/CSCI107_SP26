@@ -1,6 +1,12 @@
 ##Slide 2
 people = {'Jon': 'Lawyer', 'Susan': 'Programmer', 'Robert': 'Bank Manager', 'Tanya': 'Engineer'}
+# print(people[0]) # Can't access dictionary values by index
 
+people['Bob'] = 'Builder'
+print(people)
+
+people['Jon'] = 'Teacher'
+print(people)
 
 ##SLide 3
 # pass #This will give an error because dictionaries are not ordered (can't access by index)
@@ -10,15 +16,22 @@ people = {'Jon': 'Lawyer', 'Susan': 'Programmer', 'Robert': 'Bank Manager', 'Tan
 # print(people)
 
 ##Slide 4
-# fords = {'Ford': 'Mustang', 'Ford': 'Fusion', 'Ford': 'F150', }
-# print(fords)
+fords = {'Ford': 'Mustang', 'Ford': 'Fusion', 'Ford': 'F150', }
+print(fords)
+
+fords = {'Ford':['Mustang', 'Fusion'], 'Chevy':['Silvarado', 'Camaro']}
+print(fords)
 
 ##Slide 5
-# import faker
-#
-# fake_id = faker.Faker() #Genearte a fake_id
-# profile = dict(fake_id.profile()) #Get a profile information from the fake id data set
-# print(profile)
+import faker
+
+fake_id = faker.Faker() #Genearte a fake_id
+profile = dict(fake_id.profile()) #Get a profile information from the fake id data set
+print(profile)
+"""
+Example profile
+{'job': 'Hydrographic surveyor', 'company': 'Murphy-Perez', 'ssn': '220-15-5415', 'residence': 'PSC 6499, Box 2373\nAPO AE 66777', 'current_location': (Decimal('-80.038062'), Decimal('51.104383')), 'blood_group': 'A-', 'website': ['https://perkins.org/', 'http://www.hays.biz/'], 'username': 'mary94', 'name': 'Jennifer Davenport', 'sex': 'F', 'address': '05755 Walsh Mission Suite 675\nSinghberg, OR 40960', 'mail': 'austinerin@hotmail.com', 'birthdate': datetime.date(1969, 10, 9)}
+"""
 
 ##Slide 6
 # print(pass) ##Access the value corresponding to a key
