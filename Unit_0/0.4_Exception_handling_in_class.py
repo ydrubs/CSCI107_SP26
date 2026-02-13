@@ -9,11 +9,11 @@ Powerpoint Lesson: 0.4 - Exception Handling
 If we don't handle exceptions, we can't ensure our program will NOT break
     Here, we expect the user to enter an integer number. If they enter a different data type, the program will stop running. 
 """
-# twizzler_count = 0
-# add_twizzler = int(input("How many twizzlers would you like to add: "))
-#
-# twizzler_count += add_twizzler
-# print(f"You now have {twizzler_count} twizzlers!")
+twizzler_count = 0
+add_twizzler = int(input("How many twizzlers would you like to add: "))
+
+twizzler_count += add_twizzler
+print(f"You now have {twizzler_count} twizzlers!")
 
 
 ## Slide 4 ##
@@ -106,11 +106,18 @@ Here, we handle each type of exception differently.
 The 'raise <type>' command can be used to throw custom exceptions.
 This is useful when the program would otherwise interpret a command as valid but it must be handled as an error. 
 """
-secret_code = 'secret'
-entered_code = input("Please enter the secret code: ")
+# secret_code = 'secret'
+# entered_code = input("Please enter the secret code: ")
 
-# pass
-
+# if entered_code == '':
+#     raise ValueError ("Nothing was entered.")
+#
+# elif entered_code.casefold() != secret_code:
+#     raise PermissionError ("Wrong secret code, you silly person.")
+#
+# else:
+#     print('Access granted')
+#
 
 ## Slide 13 ##
 """
@@ -123,12 +130,13 @@ The 'raise' keyword looks for an 'except' keyword that tells it how the error sh
 # try:
 #     if int(age) < 18:
 #         raise ValueError ("you are not old enough")
-#
+# #
 #     print("Age confirmed")
-#
+# #
 # except ValueError:
 #     print(f"Invalid input")
-
+#
+# print("more code...")
 
 ## Slide 14 ##
 """
@@ -142,18 +150,20 @@ Here, after checking user input, if the user:
         - The 'except' triggers to handle the error and the text of the 'raise' is stored to the variable 'e'
         - Invalid input is displayed with the text from the raise command ('you are not old enough')
 """
-# age = input("Enter your age: ")
+age = input("Enter your age: ")
+
+try:
+    if '.' in age:
+        raise ValueError ("No decimals allowed, you silly person!")
+
+    if int(age) < 18:
+        raise ValueError ("you are not old enough")
+
+    if int(age) > 120:
+        raise ValueError ("I think you are a Zombie, no zombies allowed.")
+
+    print("Age confirmed")
 #
-# try:
-#     if int(age) < 18:
-#         raise ValueError ("you are not old enough")
-#
-#     print("Age confirmed")
-#
-# except ValueError as e:
-#     print(f"Invalid input: {e}")
-#
-#
-#
-#
+except ValueError as e:
+    print(e)
 
