@@ -15,4 +15,4 @@ Given a list of n elements in which m elements are unique and n > m,
 """
 lst = ['red', 'yellow', 'red', 'red', 'green', 'yellow', 'yellow', 'red', 'blue']
 
-
+print(lst.count('red'))
