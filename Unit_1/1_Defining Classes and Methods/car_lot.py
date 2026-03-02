@@ -16,7 +16,7 @@
 # print(special_car)
 #
 # another_car = Car() # Create another object from the Car() class
-# another_car.make = "Lamboghini"
+# another_car.make = "Lamborghini"
 #
 # print(new_car.make, another_car.make)
 #
@@ -32,15 +32,19 @@ from vehicle2 import Car
 cool_car = Car("Ford", "Fusion", "Red", 35000)
 
 # We can see documentation for any object (or class) by using help
-print(dir(cool_car))
-print(help(cool_car))
+# print(dir(cool_car))
+# print(help(cool_car))
+
 
 # Objects have inherent methods that can be accessed and manipulated
 # Here, we have the ability to represent the attributes as dictionaries
-pass
+# print(cool_car.__dict__)
+
 
 # Your turn - Add two more car objects by passing in the required parameters
-pass
+# not_cool_car = Car("Chevy", 'Nova', 'orange', '10000')
+# print(not_cool_car.price)
+
 
 """ 
     We can create objects using a loop as well.
@@ -48,14 +52,33 @@ pass
     
     Then we add them using a loop
 """
-pass
+number = int(input("Enter the number of cars to add: "))
+garage = []
 
+
+for car in range(number):
+    make = input("Enter your car's make: ")
+    model = input("Enter your car's model: ")
+    color = input("Enter your car's color: ")
+    price = int(input("Enter your car's price: "))
+
+    new_car = Car(make, model, color, price)
+    garage.append(new_car)
+
+print(garage)
+
+cars_dict = [i.__dict__ for i in garage]
+print(cars_dict)
 
 #Print individual attributes for each car
-pass
+print(garage[0].make)
+print(garage[0].price)
 
 #We can also apply conditionals to our objects
-pass
+if cars_dict[0]['price'] > 40000:
+    print("This is expensive")
+else:
+    print("This is reasonable")
 
 
 
