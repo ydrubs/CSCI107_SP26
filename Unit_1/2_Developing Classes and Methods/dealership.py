@@ -5,12 +5,19 @@ This is the code that implements the Car class from the modules:
     3) vehicle 5
     4) vehicle 6
 """
+from vehicle3 import Car
 
-pass # Use the method we wrote with a parameter
+car1 = Car('Honda', 'Accord', 'Red', 35000)
+car1.increase_mileage(8) # Use the increase mileage method we wrote with a parameter
+car1.increase_mileage(10)
 
+print(car1.mileage)
+car1.mileage = 0 # Reset mileage for the next part
 
-pass #Reset mileage for the next part
+result = car1.test_drive('ABC6767', 10)
+print(result)
 
+print(car1.number_of_test_drives)
 
 #######################################
 

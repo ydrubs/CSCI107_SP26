@@ -1,12 +1,12 @@
 """
 Exercise 2.1 - Implementing Methods
 
-Goal: Implement at least one method in the class you previously designed in the previous exercises.
+Goal: Implement at least TWO methods in the class you previously designed in the previous exercises.
 
 STEP-BY-STEP:
     STEP 1 — Choose AT LEAST TWO Methods You Wrote Earlier and Implement It (you can do more)
         Your method MUST:
-            Receive at least one parameter
+            Receive at least one parameter (besides self)
             Modify at least one attribute
             return a message or result
 
