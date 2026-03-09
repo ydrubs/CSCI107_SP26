@@ -1,7 +1,7 @@
 """
 2.3 Class Methods and Property Decorators
 
-Use vehicle5.py and dealership.py as a model to cmplete this
+Use vehicle5.py and dealership.py as a model to complete this
 
 Goal: Modify the existing class from the previous exercise to include a class attribute/method and a property decorator
 
