@@ -60,10 +60,10 @@ This is the code that implements the Car class from the modules:
 
 
 ###########################################
-from vehicle5 import Car
-
-my_car1 = Car('Toyota', 'Camry', 'Red', 35000, 20000)
-my_car2 = Car('Ford', 'Fusion', 'Black', 30000, 25000)
+# from vehicle5 import Car
+#
+# my_car1 = Car('Toyota', 'Camry', 'Red', 35000, 20000)
+# my_car2 = Car('Ford', 'Fusion', 'Black', 30000, 25000)
 # print(my_car1._Car__CAR_COUNT)
 # print(my_car2._Car__CAR_COUNT)
 # print(Car._Car__CAR_COUNT)
@@ -78,19 +78,31 @@ Your try:
     Test it out by using it here
 """
 # The two are equivalent because a class method has the same effect when called on the class as on an instance
-print(my_car2.get_car_count())
-print(Car.get_car_count())
+# print(my_car2.get_car_count())
+# print(Car.get_car_count())
 
 
 """
 Since we used a property decorator for our object, we can now access it like a variable (or attribute) rather then a method
 """
-print(my_car1.price) # Check price
+# print(my_car1.price) # Check price
 
 
-my_car1.price = 30000 # Set price
+# my_car1.price = 30000 # Set price
 # Reminder - In a previous syntax we had to do this: car1.set_price(35000)
 # --- calling methods like defining variables makes using the class much more efficient
 # --- This is another example of ENCAPSULATION techniques
 
+###########################################
+from vehicle6 import GasolineCar, ElectricCar
 
+car1 = GasolineCar("Hummer", "H3", "Green", 70000, 30000, 40)
+car2 = ElectricCar("Tesla", "Model3", "Red", 42000, 31000, 500)
+
+print(car1.refuel(5))
+print(car2.refuel(15))
+
+print(dir(car1))
+print(dir(object))
+
+print(car1.__gt__(car2))
