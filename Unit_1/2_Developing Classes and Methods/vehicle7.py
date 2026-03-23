@@ -83,14 +83,18 @@ class Car():
     Use the __eq__ magic method to define how two objects should be compared for equality, 
     allowing you to customize what it means for two instances of a class to be considered equal.
     """
-    pass
-
+    def __eq__(self, other):
+        if self.price == other.price:
+            return True
+        else:
+            return False
 
     """
     Use the __str__ magic method to define a human-readable string representation of an object, 
     which is displayed when the object is printed or converted to a string.
     """
-    pass
+    def __str__(self):
+        return f'{self.make} {self.model}'
 
 class GasolineCar(Car):
 
@@ -124,3 +128,12 @@ class ElectricCar(Car):
 if __name__ == "__main__":
     car1 = GasolineCar("Hummer", "H3", "Green", 70000, 30000, 40)
     car2 = ElectricCar("Tesla", "Model3", "Red", 42000, 31000, 500)
+
+    print(car1) # Gives a memory reference (without a __str__ method give memory location)
+    print(car2) # If we have a __str__ method we can control what the object shows
+
+    print(car1 == car2) # False because cars are not the price
+    car1.price = 42000
+    print(car1 == car2) # Now True because prices are the same
+
+    print(car1.__eq__(car2)) # Does exactly the same thing
