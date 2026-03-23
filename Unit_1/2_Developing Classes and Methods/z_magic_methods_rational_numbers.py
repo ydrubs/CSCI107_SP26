@@ -47,25 +47,24 @@ operations work.
 
 class RationalNumber:
     def __init__(self, numerator, denominator=1):
-        self.n = numerator
-        self.d = denominator
+        self.numerator = numerator
+        self.denominator = denominator
 
     def __add__(self, other):
-        if not isinstance(other, RationalNumber):
-            other = RationalNumber(other)
+        # if not isinstance(other, RationalNumber):
+        #     other = RationalNumber(other)
 
-        numerator = self.n * other.d + self.d * other.n
-        denominator = self.d * other.d
+        numerator = self.numerator * other.denominator + self.denominator * other.numerator
+        denominator = self.denominator * other.denominator
 
         # return f'{numerator}/{denominator}'
         return RationalNumber(numerator, denominator)
 
 
-
     def __sub__(self, other):
 
-        numerator1, denominator1 = self.n, self.d
-        numerator2, denominator2 = other.n, other.d
+        numerator1, denominator1 = self.numerator, self.denominator
+        numerator2, denominator2 = other.numerator, other.denominator
 
         result_numerator = (numerator1 * denominator2 - numerator2*denominator1)
         result_denomiantor = denominator1 * denominator2
@@ -82,7 +81,7 @@ class RationalNumber:
     Output as a rational number rather then a memory reference 
     """
     def __str__(self):
-        return f'{self.n}/{self.d}'
+        return f'{self.numerator}/{self.denominator}'
 
 
 if __name__ == "__main__":
@@ -96,4 +95,4 @@ if __name__ == "__main__":
     # print(isinstance(3, RationalNumber)) # False
 
     # print(3 + a)
-    # print(a - 3)
+    print(a * b)
