@@ -9,17 +9,17 @@ Another example, the __init__ method is a magic method because it is automatical
 in order to set the attributes of the instance.
 """
 
-x = 2
-y = 3
+# x = 2
+# y = 3
 
 """The examples below demonstrate operator overloading
     We define the '+' sign on three different data types to get different results
     
 """
-
-r1 = x + y # Result is 5
-r2 = str(x) + str(y) # Result is 23
-r3 = list(str(2)) + list(str(3)) # Result is ['2', '3'] since we added to lists together
+#
+# r1 = x + y # Result is 5
+# r2 = str(x) + str(y) # Result is 23
+# r3 = list(str(2)) + list(str(3)) # Result is ['2', '3'] since we added to lists together
 
 # print(r1)
 # print(r2)
@@ -47,23 +47,25 @@ operations work.
 
 class RationalNumber:
     def __init__(self, numerator, denominator=1):
-        self.numerator = numerator
-        self.denominator = denominator
+        self.n = numerator
+        self.d = denominator
 
     def __add__(self, other):
         if not isinstance(other, RationalNumber):
             other = RationalNumber(other)
 
-        numerator = self.numerator * other.denominator + self.denominator * other.numerator
-        denominator = self.denominator * other.denominator
+        numerator = self.n * other.d + self.d * other.n
+        denominator = self.d * other.d
 
         # return f'{numerator}/{denominator}'
         return RationalNumber(numerator, denominator)
 
+
+
     def __sub__(self, other):
 
-        numerator1, denominator1 = self.numerator, self.denominator
-        numerator2, denominator2 = other.numerator, other.denominator
+        numerator1, denominator1 = self.n, self.d
+        numerator2, denominator2 = other.n, other.d
 
         result_numerator = (numerator1 * denominator2 - numerator2*denominator1)
         result_denomiantor = denominator1 * denominator2
@@ -80,7 +82,7 @@ class RationalNumber:
     Output as a rational number rather then a memory reference 
     """
     def __str__(self):
-        return f'{self.numerator}/{self.denominator}'
+        return f'{self.n}/{self.d}'
 
 
 if __name__ == "__main__":
@@ -88,8 +90,10 @@ if __name__ == "__main__":
     b = RationalNumber(7, 6)
 
     print(a + b)
-    # print(3 + a)
-    print(isinstance(a, RationalNumber)) # True
-    print(isinstance(3, RationalNumber)) # False
+
+    print(a + 4)
+    # print(isinstance(a, RationalNumber)) # True
+    # print(isinstance(3, RationalNumber)) # False
 
     # print(3 + a)
+    # print(a - 3)
