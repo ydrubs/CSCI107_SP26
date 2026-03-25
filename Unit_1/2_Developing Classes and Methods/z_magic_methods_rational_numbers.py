@@ -75,6 +75,11 @@ class RationalNumber:
     Exercise - Write __mul__ and __trudiv__ methods below
     """
 
+    def __truediv__(self, other):
+        pass
+
+    def __mul__(self, other):
+        pass
     # Code for Exercise 2.5 goes here
 
     """
@@ -87,12 +92,14 @@ class RationalNumber:
 if __name__ == "__main__":
     a = RationalNumber(1,2)
     b = RationalNumber(7, 6)
+    c = RationalNumber(5, 6)
 
     print(a + b)
+    print(a + 3)
+    print(a-c)
 
-    print(a + 4)
-    # print(isinstance(a, RationalNumber)) # True
-    # print(isinstance(3, RationalNumber)) # False
+    print(isinstance(a, RationalNumber)) # True
+    print(isinstance(3, RationalNumber)) # False
 
-    # print(3 + a)
-    print(a * b)
+
+    print((5).numerator, (5).denominator)
