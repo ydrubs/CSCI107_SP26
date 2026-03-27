@@ -106,7 +106,7 @@ class Deck:
                 oCard = Card(window, rank, suit, value)
                 self.startingDeckList.append(oCard)
 
-        pass # call a method to separate playing deck from starting decks and shuffle the generated deck
+        self.shuffle() # call a method to separate playing deck from starting decks and shuffle the generated deck
 
     def shuffle(self):
         # This method shuffles the deck and ensures all cards are concealed before shuffling.
@@ -118,21 +118,24 @@ class Deck:
 
     def get_card(self):
         # This method removes and returns the top card from the playing deck. Raises an error if no cards are left.
-        pass
+        if len(self.playingDeckList) == 0:
+            raise IndexError("No more cards")
+        return self.playingDeckList.pop()
 
 
     def return_card_to_deck(self, oCard):
         # This method adds a card back to the top of the playing deck.
-        pass
+        self.playingDeckList.append(oCard)
 
 
 class Game:
     def __init__(self):
         # The Game class handles the game logic, including initializing the deck and managing the score.
 
-        pass  # Pass "None" for window as we are not using GUI
-        pass  # Starting credits for the player
-
+        self.deck = Deck(False)  # Pass "None" for window as we are not using GUI
+        self.credits = 100  # Starting credits for the player
+        self.current_card = self.deck.get_card()
+        self.current_card.reveal()
 
     def get_bet(self):
         """
@@ -140,7 +143,15 @@ class Game:
 
         Returns the bet amount or a message saying the bet is invalid
         """
-        pass
+        while True:
+            try:
+                bet = int(input("How much credits do you want to bet"))
+                if 1 <= bet <= self.credits:
+                    return bet
+                else:
+                    print("Invalid bet please enter a number between 1 and your credits")
+            except ValueError:
+                print("Please enter a valid bet")
 
 
     def start_game(self):
@@ -152,32 +163,45 @@ class Game:
         print(f"The first card is: {self.current_card}\n")
 
         while True:
-            pass # Check if there is any cards left first
+            if not self.deck.playingDeckList: # Check if there is any cards left first
+                print("No more cards, Game Over!")
+                break
+
+            if self.credits <=0: # Check if there is any credits left
+                print("No more credits left! Game Over.")
+                break
+
+            bet = self.get_bet() # Place bet
+            guess = input("Will the next cars be higher or lower (h/l): ").strip().lower()
 
 
-            pass # Check if there is any credits left
+            if guess not in ['h', 'l']: # Validate input to only allow 'h' or 'l'
+                print("Invalid Input")
+                continue # Start loop over if invalid input
 
-
-            pass # Place bet
-
-
-            pass # Validate input to only allow 'h' or 'l'
-
-                pass # Start loop over of invalid input
-
-
+            next_card = self.deck.get_card()
+            next_card.reveal()
+            print(f"The next card is a {next_card}")
 
 
             # Check if correct guess and adjust winnings (credit amount)
-            pass
+            if ((guess == 'h' and next_card.value > self.current_card.value)or
+                    (guess == "l" and next_card.value < self.current_card.value)):
 
-            pass # Get the next card
+                winnings = int(bet)
+                self.credits +=winnings
+                print(f"Correct guess. You won {winnings}. You now have {self.credits}")
+            else:
+                self.credits -=bet
+                print(f"Wrong Guess. You lose {bet} credits. You now have {self.credits}.")
+
+            self.current_card = next_card # Get the next card
 
         # Show final result
-        pass # Currently will only show 0 because this is displayed only when credits reach 0
+        print("You lose, thanks for playing. ") # Currently will only show 0 because this is displayed only when credits reach 0
 
 
 
 if __name__ == "__main__":
-    pass # Create a game object
-    pass # Run the game
+    game = Game() # Create a game object
+    game.start_game() # Run the game
