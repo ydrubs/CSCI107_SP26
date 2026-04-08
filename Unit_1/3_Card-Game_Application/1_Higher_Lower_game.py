@@ -145,7 +145,7 @@ class Game:
         """
         while True:
             try:
-                bet = int(input("How much credits do you want to bet"))
+                bet = int(input("How much credits do you want to bet: "))
                 if 1 <= bet <= self.credits:
                     return bet
                 else:
@@ -160,6 +160,7 @@ class Game:
         It manages checking if there is enough cards, revealing cards, checking bets, calculating credits, and ending the game.
         """
         print("Welcome to the Higher or Lower Card Game!")
+        print(f"You have {self.credits} to use.")
         print(f"The first card is: {self.current_card}\n")
 
         while True:

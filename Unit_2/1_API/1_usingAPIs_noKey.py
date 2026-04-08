@@ -16,16 +16,19 @@ data that we can use in our program.
 This shows how to use the request library to make an API call.
 The dictionary API does not require an access key.
 We can read the response text into a variable. The response text is a string."""
-pass # We need to install the requests package
-
-word = input("Enter a word: ")
-api_url = 'https://api.dictionaryapi.dev/api/v2/entries/en/...PASS...' #call the API url formatted with the word user provided
-
-pass # Get the response code from the server
-
-
-pass # If the response is ok (200), print the data returned
-
+# import requests # We need to install the requests package
+#
+# word = input("Enter a word: ")
+# api_url = 'https://api.dictionaryapi.dev/api/v2/entries/en/{word}'.format(word=word) #call the API url formatted with the word user provided
+#
+# response = requests.get(api_url)# Get the response code from the server
+# print(response)
+#
+# if response.status_code == requests.codes.ok: # If the response is ok (200), print the data returned
+#     print(response.text)
+#     print(type(response.text))
+# else:
+#     print("Invalid data")
 
 
 """
@@ -40,21 +43,23 @@ In this example we import the JSON library.
 We use JSON to turn the response into a list which we can then parse out to get the data needed. 
 In this case we want to only have the definition of the word entered."""
 import requests
-import pass # import the JSON library to allow recasting response to a list or dictionary
+import json # import the JSON library to allow recasting response to a list or dictionary
 
 # word = input("Enter a word: ")
-
-
+#
+#
 # api_url = 'https://api.dictionaryapi.dev/api/v2/entries/en/{word}'.format(word=word)
 # response = requests.get(api_url)
 # if response.status_code == requests.codes.ok:
-    pass #Use JSON to convert data to a Python list
-
-
-
+#      json_data = json.loads(response.text)#Use JSON to convert data to a Python list
+#
+# print(json_data)
+# print(type(json_data))
+# print(json_data[0])
+# print(type(json_data[0]))
 
 """
-The goal now is to find a structure that can extraxt the 'definition' from this list of data
+The goal now is to find a structure that can extract the 'definition' from this list of data
 
 To do this, we need to have Python parse the JSON file
 
@@ -63,7 +68,7 @@ This will let us test without needing to make extra calls to the server to test 
 """
 
 ## COPY THE JSON DATA HERE TO AVOID REPEATED SERVER CALLS
-
+data = [{'word': 'lol', 'phonetic': '/lɒl/', 'phonetics': [{'text': '/lɒl/', 'audio': 'https://api.dictionaryapi.dev/media/pronunciations/en/lol-1-uk.mp3', 'sourceUrl': 'https://commons.wikimedia.org/w/index.php?curid=88681509', 'license': {'name': 'BY-SA 4.0', 'url': 'https://creativecommons.org/licenses/by-sa/4.0'}}, {'text': '/loʊl/', 'audio': ''}], 'meanings': [{'partOfSpeech': 'noun', 'definitions': [{'definition': '(British commonwealth) Loyal Orange Lodge, a prefix given to all branches of the Loyal Orange Order. For example, LOL 1 is Portadown branch.', 'synonyms': [], 'antonyms': []}, {'definition': '(sometimes derogatory) Little old lady.', 'synonyms': [], 'antonyms': []}], 'synonyms': [], 'antonyms': []}, {'partOfSpeech': 'verb', 'definitions': [{'definition': 'To laugh out loud.', 'synonyms': [], 'antonyms': []}], 'synonyms': [], 'antonyms': []}, {'partOfSpeech': 'interjection', 'definitions': [{'definition': 'Laughing (or laugh) out loud.', 'synonyms': [], 'antonyms': []}, {'definition': 'Lots of laughs. (occasionally used)', 'synonyms': [], 'antonyms': []}, {'definition': '(by dilution) Indicates light-heartedness or amusement, or that the accompanying statement is not intended as serious.', 'synonyms': [], 'antonyms': []}, {'definition': '(letter-writing) Lots of love.', 'synonyms': [], 'antonyms': []}], 'synonyms': [], 'antonyms': []}], 'license': {'name': 'CC BY-SA 3.0', 'url': 'https://creativecommons.org/licenses/by-sa/3.0'}, 'sourceUrls': ['https://en.wiktionary.org/wiki/LOL', 'https://en.wiktionary.org/wiki/lol']}, {'word': 'lol', 'phonetics': [], 'meanings': [{'partOfSpeech': 'interjection', 'definitions': [{'definition': 'Used in song as a nonsense syllable.', 'synonyms': [], 'antonyms': []}], 'synonyms': [], 'antonyms': []}], 'license': {'name': 'CC BY-SA 3.0', 'url': 'https://creativecommons.org/licenses/by-sa/3.0'}, 'sourceUrls': ['https://en.wiktionary.org/wiki/lol']}]
 
 # --- Uncomment this line when we get our script working to go back to getting server data
 # data = json_data
