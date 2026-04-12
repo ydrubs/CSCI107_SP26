@@ -26,6 +26,7 @@ import json
 
 # --- PRACTICE -- MODIFY THE URL BELOW
 # --- Structure and make a few of your own API calls below by modifying the api_url
+# --- remove the extra URL's if not needed
 api_url_1 = pass
 api_url_2 = pass
 api_url_3 = pass
