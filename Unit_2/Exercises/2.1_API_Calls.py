@@ -11,9 +11,13 @@ Go to the API directory on the API Ninja website (make sure you have an account 
             and what you learned in class. Make sure to structure the URL to return the parameters you want.
             Also, make sure you use your API key to return a successful result.
 
-    STEP 3: Parse the return to only display the data you want
+    STEP 3: Parse the return to only display the data you want (if necessary)
 
     STEP 3: Remove the API key in the code for security, then turn it in.
+
+    Turn in the following:
+        1) The code below
+        2) Short explanation of which part of the data you parsed for (if multiple parts are returned)
 
 """
 import requests
