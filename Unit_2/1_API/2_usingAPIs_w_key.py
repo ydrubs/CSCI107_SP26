@@ -32,17 +32,17 @@ and send it to the server along with our API key
 # categories = ["wisdom", "philosophy", "life", "truth", "inspirational", "relationships",
 #         "love", "faith", "humor", "success", "courage", "happiness", "art", "writing",
 #         "fear", "nature", "time", "freedom", "death", "leadership"]
-
-
-pass # Get the index of the category to pass into the URL
+#
+#
+# category_index = categories.index("wisdom") # Get the index of the category to pass into the URL
 
 # --- # Make the API call as per the documentation
-# api_url = 'https://api.api-ninjas.com/v2/randomquotes?categories={}'......PASS......
+# api_url = 'https://api.api-ninjas.com/v2/randomquotes?categories={}'.format(categories[category_index])
 
 # --- Make sure to paste the correct key provided to you by the website!
-# response = requests.get(api_url, headers={'X-Api-Key': 'YOUR KEY HERE'}) #Replace with YOUR OWN API key
-
-
+# response = requests.get(api_url, headers={'X-Api-Key': 'YOU API KEY HERE'}) #Replace with YOUR OWN API key
+#
+#
 # if response.status_code == requests.codes.ok:
 #     json_data = json.loads(response.text)  # Use JSON to convert data to a Python list
 #
@@ -50,11 +50,18 @@ pass # Get the index of the category to pass into the URL
 #     print("Error:", response.status_code, response.text) #...or if an error occurs, return error code
 #
 # print(json_data)
-
+# print(type(json_data))
 
 # --- Your TASK: Use the json_data to parse and display just the quote like we did in the previous lesson
-
-
+# quote_dict = json_data[0]
+# print(quote_dict)
+#
+# quote = quote_dict['quote']
+# print(quote)
+#
+# #Do in one step
+# quote = json_data[0]['quote']
+# print(quote)
 
 """
 Example 5 Structuring an API call
@@ -92,15 +99,16 @@ Example 5 Structuring an API call
 """
 # import requests
 # import json
-#
+
 # # --- PRACTICE
 # # --- Structure and make a few of your own API calls below by modifying the api_url
 # api_url = "https://api.api-ninjas.com/v1/sp500?"
-#
-#
-# response = requests.get(api_url, headers={
-#     'X-Api-Key': 'YOUR KEY HERE'})  # Replace YOUR OWN API key
-#
+# api_url2 = "https://api.api-ninjas.com/v1/sp500?sector=consumer_staples&max_date_added=2000-01-01"
+# #
+# #
+# response = requests.get(api_url2, headers={
+#     'X-Api-Key': 'YOU API KEY HERE'})  # Replace YOUR OWN API key
+# #
 # if response.status_code == requests.codes.ok:
 #     json_data = json.loads(response.text)  # Use JSON to convert data to a Python list
 #
@@ -127,25 +135,28 @@ import json
 url = 'https://api.nasa.gov/planetary/apod'
 
 # api_key = 'DEMO_KEY' #Replace with YOUR KEY to run (Demo_key has limited API calls)
-# api_key = 'PASTE YOUR KEY HERE'
-date = 'YYYY-MM-DD'
+api_key = 'ubWfZS1xbjvdqAjBjyLrTcbFe0KLO3DVkqwuMb2s'
+date = '2025-09-26'
 
-# querystring = {'api_key': api_key, 'date': date}
+querystring = {'api_key': api_key, 'date': date}
 
 # In the previous examples, we directly called the 'get' request through a method. Here, we specify the type of request when making the API call.
-pass
+response = requests.get(url, params=querystring)
 
-# if response.status_code == requests.codes.ok:
-#     response = json.loads(response.text)
-# else:
-#     print("Error:", response.status_code, response.text)  # ...or if an error occurs, return error code
+if response.status_code == requests.codes.ok:
+    response = json.loads(response.text)
+else:
+    print("Error:", response.status_code, response.text)  # ...or if an error occurs, return error code
 #
-# print(response)
+print(response)
 
 
 
 # --- After examining the data in the response and understanding its type, we want to pull out the image linked in the response and display it.
-
+url = response['hdurl']
+print(url)
 
 # --- We will open a web browser to show the image. We can also design a GUI with Tkinter or another library to display the image there instead.
-
+import webbrowser
+#
+webbrowser.open(url)
