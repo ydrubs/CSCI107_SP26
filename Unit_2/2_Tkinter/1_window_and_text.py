@@ -29,22 +29,23 @@ All widgets (buttons, labels, frames, etc.) are typically placed inside this
 root window or within containers that belong to it.
 """
 
-pass #Define the root window
-pass #Give the window screen a title
+root = tk.Tk() #Define the root window
+root.title("The best GUI") #Give the window screen a title
 
 # --- Set the size of the window
 # --- We can use addition for the x,y offset to determine the location of the window when the application is run
-pass
+root.geometry('800x600+50+50')
 
-pass #Don't allow window resizing (default is 1,1)
+root.resizable(1,1) #Don't allow window resizing (default is 1,1)
 
 #Limit resize dimensions if resizing allowed
-pass
+root.minsize(200,200)
+root.maxsize(1000,1000)
 
 
 color1 = 'teal' # Use color definitions: https://cs111.wellesley.edu/archive/cs111_fall14/public_html/labs/lab12/tkintercolor.html
 color2 = '#11AABB' # Use a Hex Value #RRGGBB
-pass # Define root window color
+root.config(bg='medium turquoise') # Define root window color
 
 """
 Note:
@@ -86,20 +87,21 @@ options and layout configurations.
 """
 
 ##Create text widgets(labels)
-pass #Create a text widget in the root window
-pass # Place widget in the window using the pack layout manager
+text1 = tk.Label(root, text=t1) #Create a text widget in the root window
+text1.pack() # Place widget in the window using the pack layout manager
 
-pass
-pass #give it top and bottom padding
+text2 = tk.Label(root, text=t2)
+text2.pack(pady=10) #give it top and bottom padding
 
-pass #Change font, font-size, bold, and color
-pass
+text3 = tk.Label(root, text=t3, font = ('Arial', 15, 'bold'), bg='yellow') #Change font, font-size, bold, and color
+text3.pack(pady = 10)
 
-pass
-pass #Add only padding, below, add internal padding (inside the text widget), align-left
 
-pass
-pass #Fill up all widget space in x-direction add some padding
+text4 = tk.Label(root, text=t4, font = ('Cambria', 12, 'bold'), fg='blue')
+text4.pack(pady=(0,10), ipadx=50, ipady=10, anchor='w') #Add only padding, below, add internal padding (inside the text widget), align-left
+
+text5 = tk.Label(root, text=t5,font = ('Helvetica', 12, 'underline'))
+text5.pack(padx=20, pady=20, fill='both') #Fill up all widget space in x-direction add some padding
 
 
 """
@@ -187,6 +189,6 @@ Once mainloop() is called:
 This should be the last line of a Tkinter program, as it blocks further code
 execution until the application is exited.
 """
-pass
+root.mainloop()
 
 
