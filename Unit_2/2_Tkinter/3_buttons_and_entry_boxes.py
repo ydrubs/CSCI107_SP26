@@ -3,7 +3,6 @@ import tkinter as tk
 root = tk.Tk() # Create a simple root window
 root.title("Button demo")
 
-
 # =========================
 # ALL BUTTON BEHAVIOR EXAMPLE
 # =========================
