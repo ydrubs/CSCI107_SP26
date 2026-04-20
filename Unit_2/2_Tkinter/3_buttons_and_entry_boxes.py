@@ -51,68 +51,75 @@ button.pack(pady=20)
 
 ################################################################################################################
 # Basic Button
-pass
-# button1.pack()
+button1 = tk.Button(root, text="Basic Button")
+button1.pack()
 
 
 # --- Button with Callback Command
 # --- A callback command triggers a function defined by 'command' when the button is pressed
 
-pass
+def button_command():
+    print("Button Clicked")
 
-pass
-# button2.pack()
+button2 = tk.Button(root, text="Button with command", command=button_command)
+button2.pack()
 
 # Button with Font Styling
-pass
-# button3.pack()
+button3 = tk.Button(root, text = "Button with Style!!", font=("Arial", 50, "bold"))
+button3.pack()
 
 # Button with Background and Foreground Colors
-pass
-# button4.pack()
+button4 = tk.Button(root, text="Button with colors", bg='#BC98AC', fg='black')
+button4.pack(pady=20)
 
 # Button with Padding
-# button5 = tk.Button(root, text="Button with Padding", padx=10, pady=10)
-# button5.pack()
+button5 = tk.Button(root, text="Button with Padding", padx=10, pady=10)
+button5.pack()
 
 ################################################################################################################
 """Entry Boxes"""
 
 # Basic Entry Box
-pass
-# entry1.pack()
+entry1 = tk.Entry(root)
+entry1.pack()
 
 # Entry with Default Text
-pass
-# entry2.pack()
+entry2 = tk.Entry(root)
+entry2.insert(0, "Default text")
+entry2.pack()
 
 # Entry with Font Styling
-# entry3 = tk.Entry(root, font=("Arial", 20, "bold"))
-# entry3.pack()
+entry3 = tk.Entry(root, font=("Arial", 20, "bold"))
+entry3.pack()
 
 # Entry with Background and Foreground Colors
-# entry4 = tk.Entry(root, bg="yellow", fg="red")
-# entry4.pack()
+entry4 = tk.Entry(root, bg="yellow", fg="red")
+entry4.pack()
 
 # Entry with Width Specified
-# entry5 = tk.Entry(root, width=50)
-# entry5.pack()
+entry5 = tk.Entry(root, width=50)
+entry5.pack()
 
 """Password entry box"""
 # Password prompt frame
-pass
+password_frame = tk.Frame(root, padx=10 , pady=10 , bg='tan')
+password_frame.pack(padx=10, pady=10)
 
 # Password label
-pass
+password_label = tk.Label(password_frame, text='Please enter a password')
+password_label.grid(row=0, column=0)
 
 # Password entry box
-pass
+password_entry = tk.Entry(password_frame, show='*')
+password_entry.grid(row=0, column=1)
 
-
-pass
+# Functon for submit button
+def submit_password():
+    print("Password Submitted")
 
 # Submit button
-# submit_button = tk.Button(password_frame, text="Submit", command=submit_password)
+submit_button = tk.Button(password_frame, text="Submit", command=submit_password)
+submit_button.grid(row=1, column=0, columnspan=2, sticky='ew', pady=(10,0))
 
 """
 - use columnspan to make a widget span across multiple columns in the grid
@@ -121,7 +128,6 @@ pass
   (e.g., 'n', 's', 'e', 'w', 'ns', 'ew', 'nsew')
   'ew' means it will stretch in the left-right direction across both columns
 """
-pass
 
 
 ################################################################################################################
@@ -150,7 +156,16 @@ Key Idea:
     When a radiobutton is selected, its value is stored in the IntVar.
     We can then use .get() to retrieve that value and act on it.
 """
-pass
+selected_value = tk.IntVar()
 
+# --- function that triggers when new radio button is pressed
+def show_var():
+    print(f"You selected {selected_value.get()}")
+
+radio1 = tk.Radiobutton(root, text="Option1", variable=selected_value, value=1, command=show_var)
+radio1.pack()
+
+radio2 = tk.Radiobutton(root, text="Option2", variable=selected_value, value=2, command=show_var)
+radio2.pack()
 
 root.mainloop()
