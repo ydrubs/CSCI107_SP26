@@ -5,6 +5,7 @@ pass
 #Define Root window
 pass
 
+
 #Define fonts and colors
 root_color = '#FEFAE0'
 quad1_color = '#90A583'
